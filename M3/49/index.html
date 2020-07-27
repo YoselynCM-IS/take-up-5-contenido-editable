@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../style/style.css?rnd=132">
+  
+    <!--***** dos lineas de scripts para guardar imagen-->
+    <script type="text/javascript" src="../../js/html2canvas.js"></script>
+    <script type="text/javascript" src="../../js/html2canvas.min.js"></script>
+    <!--***** Fin de dos lineas de scripts para guardar imagen-->
+
+</head>
+
+<body>
+
+    <div id="contenedor">
+      <div style="position:absolute;top:0.000000px;left:0.000000px"><nobr><img height="1099.000000" width="872.000000" src ="bgimg/fondo.jpg"/></nobr></div>
+        <!--Empezar a agregar contenido-->
+        
+	  <span style="position: absolute; top: 605px; left: 344px">
+	  <textarea rows = "1" cols = "5" maxlength = "11" id="tup5_p49res1"></textarea>
+	  </span>
+     <span style="position: absolute; top: 625px; left: 188px">
+	  <textarea rows = "1" cols = "11" maxlength = "11" id="tup5_p49res2"></textarea>
+	  </span>
+      <span style="position: absolute; top: 664px; left: 204px">
+	  <textarea rows = "1" cols = "17" maxlength = "17" id="tup5_p49res3"></textarea>
+		</span>
+      <span style="position: absolute; top: 707px; left: 231px">
+	  <textarea rows = "1" cols = "18" maxlength = "16" id="tup5_p49res4"></textarea>
+		</span>
+      <span style="position: absolute; top: 747px; left: 242px">
+	  <textarea rows = "1" cols = "16" maxlength = "16" id="tup5_p49res5"></textarea>
+		</span>
+      <span style="position: absolute; top: 787px; left: 259px">
+			<textarea rows = "1" cols = "16" maxlength = "16" id="tup5_p49res6"></textarea>
+		</span>
+      
+      <span style="position: absolute; top: 259px; left: 539px">
+			<textarea rows = "1" cols = "30" maxlength = "30" id="tup5_p49res7"></textarea><br>
+	  <textarea rows = "1" cols = "30" maxlength = "30" id="tup5_p49res8"></textarea>
+		</span>
+      <span style="position: absolute; top: 301px; left: 539px">
+			<textarea rows = "1" cols = "30" maxlength = "30" id="tup5_p49res9"></textarea><br>
+	  <textarea rows = "1" cols = "30" maxlength = "30" id="tup5_p49res10"></textarea>
+		</span>
+      <span style="position: absolute; top: 340px; left: 539px">
+			<textarea rows = "1" cols = "30" maxlength = "30" id="tup5_p49res11"></textarea><br>
+	  <textarea rows = "1" cols = "30" maxlength = "30" id="tup5_p49res12"></textarea>
+		</span>
+      <span style="position: absolute; top: 380px; left: 539px">
+			<textarea rows = "1" cols = "30" maxlength = "30" id="tup5_p49res13"></textarea><br>
+	  <textarea rows = "1" cols = "30" maxlength = "30" id="tup5_p49res14"></textarea>
+		</span>
+      <span style="position: absolute; top: 421px; left: 539px">
+			<textarea rows = "1" cols = "30" maxlength = "30" id="tup5_p49res15"></textarea><br>
+			<textarea rows = "1" cols = "30" maxlength = "30" id="tup5_p49res16"></textarea>
+		</span>
+      
+      <span style="position: absolute; top: 788px; left: 583px">
+			<textarea rows = "1" cols = "18" maxlength = "18" id="tup5_p49res17"></textarea>
+		</span>
+      <span style="position: absolute; top: 829px; left: 586px">
+	  <textarea rows = "1" cols = "20" maxlength = "20" id="tup5_p49res18"></textarea>
+		</span>
+      <span style="position: absolute; top: 870px; left: 594px">
+	  <textarea rows = "1" cols = "18" maxlength = "18" id="tup5_p49res19"></textarea>
+		</span>
+      <span style="position: absolute; top: 910px; left: 580px">
+	  <textarea rows = "1" cols = "18" maxlength = "18" id="tup5_p49res20"></textarea>
+		</span>
+      <span style="position: absolute; top: 950px; left: 589px">
+			<textarea rows = "1" cols = "18" maxlength = "18" id="tup5_p49res21"></textarea>
+		</span>
+       
+        <!--Fin del contenido-->
+           <!-- FORMULARIO AL FINAL DEL CONTENIDO -->
+
+		<form style="margin-top: 1030px;margin-left: 190px; position: absolute; z-index: 2;" id="myForm" action="../../send.php" method="post">
+			<textarea style="display:none;" id="myInput" name = "imagen" maxlength="10"></textarea>
+			<input type="button" onclick="save_data()" value="Save"  class="btn btn-primary">
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="button" onclick="send_data(); loader(); return false" value="Send" class="btn btn-primary"> 
+			<input type="hidden" id="tup5_regNA" name="tup5_regNA">
+			<input type="hidden" id="tup5_regGP" name="tup5_regGP">
+			<input type="hidden" id="tup5_regCA" name="tup5_regCA">
+			<input type="hidden" id="tup5_regND" name="tup5_regND">
+			<input type="hidden" id="tup5_regCD" name="tup5_regCD">
+		</form>
+
+		<!-- FIN FORMULARIO AL FINAL DEL CONTENIDO -->
+
+		<div id="loader" style="display:none; margin-top: 1020px;margin-left: 190px; position: absolute; z-index: 2;">
+			<img src="../../img/carga.gif"  width="180px" height="65px">
+		</div>
+            
+    </div>       
+</body>
+<script type="text/javascript">
+	//Carga datos del registro
+    document.getElementById('tup5_regNA').value = localStorage.getItem('tup5_regNA');
+    document.getElementById('tup5_regGP').value = localStorage.getItem('tup5_regGP');
+    document.getElementById('tup5_regCA').value = localStorage.getItem('tup5_regCA');
+    document.getElementById('tup5_regND').value = localStorage.getItem('tup5_regND');
+    document.getElementById('tup5_regCD').value = localStorage.getItem('tup5_regCD');
+
+	 document.getElementById('tup5_p49res1').value = localStorage.getItem('tup5_p49res1');
+    document.getElementById('tup5_p49res2').value = localStorage.getItem('tup5_p49res2');
+    document.getElementById('tup5_p49res3').value = localStorage.getItem('tup5_p49res3');
+    document.getElementById('tup5_p49res4').value = localStorage.getItem('tup5_p49res4');
+    document.getElementById('tup5_p49res5').value = localStorage.getItem('tup5_p49res5');
+    document.getElementById('tup5_p49res6').value = localStorage.getItem('tup5_p49res6');
+    document.getElementById('tup5_p49res7').value = localStorage.getItem('tup5_p49res7');
+    document.getElementById('tup5_p49res8').value = localStorage.getItem('tup5_p49res8');
+    document.getElementById('tup5_p49res9').value = localStorage.getItem('tup5_p49res9');
+    document.getElementById('tup5_p49res10').value = localStorage.getItem('tup5_p49res10');
+    document.getElementById('tup5_p49res11').value = localStorage.getItem('tup5_p49res11');
+    document.getElementById('tup5_p49res12').value = localStorage.getItem('tup5_p49res12');
+    document.getElementById('tup5_p49res13').value = localStorage.getItem('tup5_p49res13');
+    document.getElementById('tup5_p49res14').value = localStorage.getItem('tup5_p49res14');
+    document.getElementById('tup5_p49res15').value = localStorage.getItem('tup5_p49res15');
+    document.getElementById('tup5_p49res16').value = localStorage.getItem('tup5_p49res16');
+    document.getElementById('tup5_p49res17').value = localStorage.getItem('tup5_p49res17');
+    document.getElementById('tup5_p49res18').value = localStorage.getItem('tup5_p49res18');
+    document.getElementById('tup5_p49res19').value = localStorage.getItem('tup5_p49res19');
+    document.getElementById('tup5_p49res20').value = localStorage.getItem('tup5_p49res20');
+    document.getElementById('tup5_p49res21').value = localStorage.getItem('tup5_p49res21');
+    
+
+    function save_data(){
+        var tup5_p49res1 = document.getElementById('tup5_p49res1').value;
+        localStorage.setItem('tup5_p49res1', tup5_p49res1);
+        var tup5_p49res2 = document.getElementById('tup5_p49res2').value;
+        localStorage.setItem('tup5_p49res2', tup5_p49res2);
+        var tup5_p49res3 = document.getElementById('tup5_p49res3').value;
+        localStorage.setItem('tup5_p49res3', tup5_p49res3);
+        var tup5_p49res4 = document.getElementById('tup5_p49res4').value;
+        localStorage.setItem('tup5_p49res4', tup5_p49res4);
+        var tup5_p49res5 = document.getElementById('tup5_p49res5').value;
+        localStorage.setItem('tup5_p49res5', tup5_p49res5);
+        var tup5_p49res6 = document.getElementById('tup5_p49res6').value;
+        localStorage.setItem('tup5_p49res6', tup5_p49res6);
+        var tup5_p49res7 = document.getElementById('tup5_p49res7').value;
+        localStorage.setItem('tup5_p49res7', tup5_p49res7);
+        var tup5_p49res8 = document.getElementById('tup5_p49res8').value;
+        localStorage.setItem('tup5_p49res8', tup5_p49res8);
+        var tup5_p49res9 = document.getElementById('tup5_p49res9').value;
+        localStorage.setItem('tup5_p49res9', tup5_p49res9);
+        var tup5_p49res10 = document.getElementById('tup5_p49res10').value;
+        localStorage.setItem('tup5_p49res10', tup5_p49res10);
+        var tup5_p49res11 = document.getElementById('tup5_p49res11').value;
+        localStorage.setItem('tup5_p49res11', tup5_p49res11);
+        var tup5_p49res12 = document.getElementById('tup5_p49res12').value;
+        localStorage.setItem('tup5_p49res12', tup5_p49res12);
+        var tup5_p49res13 = document.getElementById('tup5_p49res13').value;
+        localStorage.setItem('tup5_p49res13', tup5_p49res13);
+        var tup5_p49res14 = document.getElementById('tup5_p49res14').value;
+        localStorage.setItem('tup5_p49res14', tup5_p49res14);
+        var tup5_p49res15 = document.getElementById('tup5_p49res15').value;
+        localStorage.setItem('tup5_p49res15', tup5_p49res15);
+        var tup5_p49res16 = document.getElementById('tup5_p49res16').value;
+        localStorage.setItem('tup5_p49res16', tup5_p49res16);
+        var tup5_p49res17 = document.getElementById('tup5_p49res17').value;
+        localStorage.setItem('tup5_p49res17', tup5_p49res17);
+        var tup5_p49res18 = document.getElementById('tup5_p49res18').value;
+        localStorage.setItem('tup5_p49res18', tup5_p49res18);
+        var tup5_p49res19 = document.getElementById('tup5_p49res19').value;
+        localStorage.setItem('tup5_p49res19', tup5_p49res19);
+        var tup5_p49res20 = document.getElementById('tup5_p49res20').value;
+        localStorage.setItem('tup5_p49res20', tup5_p49res20);
+        var tup5_p49res21 = document.getElementById('tup5_p49res21').value;
+        localStorage.setItem('tup5_p49res21', tup5_p49res21);
+        
+        alert("Saved correctly");
+    }
+
+    function send_data(){
+        pantallazo();
+        setTimeout(function(){document.getElementById("myForm").submit();}, 3000);
+    }
+
+    function pantallazo(){
+
+        html2canvas(document.body).then(canvas => {
+        	var dataURL = canvas.toDataURL();
+            console.log(dataURL);
+            document.getElementById("myInput").value = dataURL;
+            var canvas = document.createElement("canvas");
+            var ctx=canvas.getContext("2d");
+            var cw=canvas.width;
+            var ch=canvas.height;
+            var maxW=1280;
+            var maxH=1024;
+
+            var output = document.getElementById('myInput');
+	        var img = new Image;
+            img.onload = function() {
+                var iw=img.width;
+                var ih=img.height;
+                var scale=Math.min((maxW/iw),(maxH/ih));
+                var iwScaled=iw*scale;
+                var ihScaled=ih*scale;
+                canvas.width=iwScaled;
+                canvas.height=ihScaled;
+                ctx.drawImage(img,0,0,iwScaled,ihScaled);
+     	        output.value = canvas.toDataURL("../image/jpeg",1);
+            }
+            img.src = dataURL
+        });
+    }
+    
+    function loader(){
+		document.getElementById('loader').style.display = 'Block';
+ 
+	}
+
+</script>
+
+</html>
